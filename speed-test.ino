@@ -4,11 +4,8 @@ void setup()
   
   pinMode(9, OUTPUT);
   pinMode(10, INPUT);
-  
-  Serial.println("Speed Test will begin momentarily.");
-  Serial.println("");
  
- delay(4000);
+  delay(4000);
   
   speedTest();
 }
@@ -34,7 +31,7 @@ void speedTest(void)
   Serial.println(F("----------"));
 
   Serial.print(F("F_CPU = "));
-  Serial.print(F_CPU,DEC);
+  Serial.print(F_CPU, DEC);
   Serial.println(F(" Hz"));
 
   delay(800);    // Allow the Serial text to be transmitted
