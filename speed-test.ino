@@ -36,9 +36,6 @@ void speedTest(void)
   Serial.print(F("F_CPU = "));
   Serial.print(F_CPU,DEC);
   Serial.println(F(" Hz"));
-  Serial.print(F("1/F_CPU = "));
-  Serial.print((1000000.0/(float)F_CPU),4);
-  Serial.println(F(" us"));
 
   delay(800);    // Allow the Serial text to be transmitted
 
@@ -674,7 +671,7 @@ void speedTest(void)
   Serial.println (F(" us"));
 
 
-
+  // Converte um número em string em uma variedade de bases, ex: Decimal, Binary, Int..
   Serial.print(F("  itoa()                    : "));
   delay(70);     // Allow the Serial text to be transmitted
   m=millis();
@@ -717,7 +714,7 @@ void speedTest(void)
   
 
 
-
+  // Converte um Float em um array de Char's para ser printado.
   Serial.print(F("  dtostrf()                 : "));
   float d3;
   d3 = 3.14159265;
@@ -786,84 +783,6 @@ void speedTest(void)
       r=random(-2147483647,2147483647);
       r=random(-2147483647,2147483647);
       r=random(-2147483647,2147483647);
-    }
-  }
-  n=millis();
-  d = ((float)n - (float)m) / ((float)i * (float)j);
-  d *= 1000.0;
-  d -= overhead;
-  d /= 20.0;
-  Serial.print (d,3);
-  Serial.println (F(" us"));
-
-
-
-  Serial.print(F("  y |= (1<<x)               : "));
-  delay(70);     // Allow the Serial text to be transmitted
-  m=millis();
-  for (i=0; i<20; i++)
-  {
-    for (j=0; j<10000; j++)
-    {
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-      v |= _BV(12);
-    }
-  }
-  n=millis();
-  d = ((float)n - (float)m) / ((float)i * (float)j);
-  d *= 1000.0;
-  d -= overhead;
-  d /= 20.0;
-  Serial.print (d,3);
-  Serial.println (F(" us"));
-
-
-
-  Serial.print(F("  bitSet()                  : "));
-  delay(70);     // Allow the Serial text to be transmitted
-  m=millis();
-  for (i=0; i<20; i++)
-  {
-    for (j=0; j<10000; j++)
-    {
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
-      bitSet (v, 12);
     }
   }
   n=millis();
